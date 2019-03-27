@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+	<title>Cadsatrar Lista</title>
+</head>
+<body>
+<nav class="nav-extended">
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo">Minha Lista</a>
+  <ul class="right hide-on-med-and-down">
+        <li><a href="/minhasListas">Listas</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/cadastrar">Cadastrar</a></li>
+      </ul>
+    </div>
+    <div class="nav-content">
+      <a href="/cadastrar_lista" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+      </a>
+    </div>
+  </nav>
+<div class="container">
+	<h1 class="">Cadastro de lista</h1>
+</div>
+
+<form class="container" method="post">
+	<div class="row">
+		<div class="input-field col s4">
+			Nome: <input type="text" value="" name="nome" id="nome" placeholder="Nome do item">
+		</div>
+		<div class="input-field col s4">
+			Data de fim: <input type="date" value="" name="data_fim" id="data_fim">
+		</div>
+		<div class="input-field col s4">
+			<button class="btn waves-effect waves-light" type="submit"> Criar<i class="material-icons right">send</i></button>
+		</div>
+	</div>
+</form>
+
+<footer class="page-footer">
+    <div class="footer-copyright">
+    	<div class="container">
+	    	© 2019 Copyright Text
+	    	<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    	</div>
+  	</div>
+</footer>
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+</html>

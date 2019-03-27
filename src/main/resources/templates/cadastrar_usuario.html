@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+	<title>Cadastrar</title>
+</head>
+<body>
+<nav class="nav-extended">
+  <div class="nav-wrapper container">
+    <a href="/" class="brand-logo">Minha Lista</a>
+	  <ul class="right hide-on-med-and-down">
+    	<li><a href="/login">Login</a></li>
+    </ul>
+  </div>
+  <div class="nav-content">
+    <a href="/cadastrar_lista" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+      <i class="material-icons">add</i>
+    </a>
+  </div>
+</nav>
+<section style="min-height: 100vh;">
+<div class="container" style="margin-top: 40px; margin-bottom: 60px;">
+	<h4 class="">Cadastro de Usuário</h4>
+</div>
+
+<form class="container" method="post">
+	<div class="row">
+		Nome: <input type="text" name="usuario_nome" id="usuario_nome" placeholder="Digite seu nome">
+	</div>
+
+	<div class="row">
+		<div class="input-field col s8">
+			E-mail: <input type="email" name="usuario_email" id="usuario_email" placeholder="Seu melhor e-mail">
+		</div>
+		<div class="input-field col s4">
+			Senha: <input type="password" name="usuario_senha" id="usuario_senha" placeholder="********">
+		</div>
+		<div class="input-field col s4">
+			<button class="btn waves-effect waves-light" type="submit"> Criar<i class="material-icons right">send</i></button>
+		</div>
+	</div>
+</form>
+</section>
+<footer class="page-footer">
+    <div class="footer-copyright">
+    	<div class="container" style="text-align:center;">
+	    	© 2019 Copyright Text
+    	</div>
+  	</div>
+</footer>
+
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+</html>
