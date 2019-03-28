@@ -4,20 +4,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.mlp.model.lista;
+import com.mlp.model.Lista;
 import com.mlp.repository.ListaRepository;
 
 @Controller
-public class listaController {
+public class ListaController {
 	
 	//Injeção de dependência
 	@Autowired
-	private ListaRepository listarepository;
+	public ListaRepository listarepository;
 	
 	@RequestMapping(value="/cadastrar_lista", method=RequestMethod.GET)
 	public String form() {
-		return "formLista";
+		return "cadastrar_lista";
 	}
 	
 	public String codigo() {
@@ -34,7 +35,7 @@ public class listaController {
 	
 	
 	@RequestMapping(value="/cadastrar_lista", method=RequestMethod.POST)
-	public String form(lista lista) {
+	public String form(Lista lista) {
 		
 		lista.codigo_unico = codigo();
 		
@@ -43,6 +44,19 @@ public class listaController {
 		
 		return "redirect:/minhasListas";
 	}
+	
+	@Controller
+	public class MinhasListas {
+		
+		@RequestMapping("/minhasListas")
+		public ModelAndView todasLista() {
+			ModelAndView objeto = new ModelAndView("minhasListas");
+			Iterable<Lista> listas = listarepository.findAll();
+			objeto.addObject("listas", listas);
+			return objeto;
+		}
+	}
+
 	
 
 }

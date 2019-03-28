@@ -11,16 +11,17 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     
-	<title>Cadastrar</title>
+	<title>Logar</title>
 </head>
 <body>
 <nav class="nav-extended">
   <div class="nav-wrapper container">
     <a href="/" class="brand-logo">Minha Lista</a>
 	  <ul class="right hide-on-med-and-down">
-    	<li><a href="/login">Login</a></li>
+    	<li><a href="cadastrar_usuario">Cadastrar</a></li>
     </ul>
   </div>
+
 </nav>
 <section style="min-height: 100vh;">
 <div class="container" style="margin-top: 40px; margin-bottom: 60px;">
@@ -29,21 +30,26 @@
 
 <form class="container" method="post">
 	<div class="row">
-		Nome: <input type="text" name="usuario_nome" id="usuario_nome" placeholder="Digite seu nome">
-	</div>
-
-	<div class="row">
 		<div class="input-field col s8">
-			E-mail: <input type="email" name="usuario_email" id="usuario_email" placeholder="Seu melhor e-mail">
+			E-mail: <input type="email" name="usuario_email" id="usuario_email" placeholder="E-mail cadastrado">
 		</div>
 		<div class="input-field col s4">
 			Senha: <input type="password" name="usuario_senha" id="usuario_senha" placeholder="********">
 		</div>
 		<div class="input-field col s4">
-			<button class="btn waves-effect waves-light" type="submit"> Criar<i class="material-icons right">send</i></button>
+			<button class="btn waves-effect waves-light" type="submit">Entrar <i class="material-icons right">send</i></button>
 		</div>
 	</div>
 </form>
+
+<div class="container" style="margin-top: 40px; margin-bottom: 60px;">
+	<h4 class="">Ainda não tem cadastro?</h4>
+	<p>O cadastro é simples e rápido.</p>
+	<p>
+		<a class="btn waves-effect waves-light" href="/cadastrar_usuario">Cadastrar<i class="material-icons right">input</i></a>
+	</p>
+</div>
+
 </section>
 <footer class="page-footer">
     <div class="footer-copyright">

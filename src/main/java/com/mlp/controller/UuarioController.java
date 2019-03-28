@@ -5,11 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.mlp.model.usuario;
+import com.mlp.model.Usuario;
 import com.mlp.repository.UsuarioRepository;
 
 @Controller
-public class usuarioController {
+public class UuarioController {
 	
 	//Injeção de dependência
 	@Autowired
@@ -21,12 +21,17 @@ public class usuarioController {
 	}
 	
 	@RequestMapping(value="/cadastrar_usuario", method=RequestMethod.POST)
-	public String form(usuario usuario) {
+	public String form(Usuario usuario) {
 		
 		//Salvando lista no banco de dados
 		usuariorepository.save(usuario);
 		
-		return "redirect:/cadastrar_lista";
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value="/login")
+	public String login() {
+		return "login";
 	}
 }
 

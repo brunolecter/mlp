@@ -2,8 +2,8 @@ package com.mlp.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.mlp.model.lista;
+import com.mlp.model.Lista;
 
-public interface ListaRepository extends CrudRepository<lista, String>{
+public interface ListaRepository extends CrudRepository<Lista, String>{
 
 }

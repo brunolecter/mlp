@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class lista implements Serializable{
+public class Lista implements Serializable{
 	
 	private static final long serialVersionUID=1L;
 	
