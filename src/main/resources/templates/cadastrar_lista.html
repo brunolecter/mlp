@@ -16,12 +16,10 @@
 <body>
 <nav class="nav-extended">
     <div class="nav-wrapper container">
-      <a href="/" class="brand-logo">Minha Lista</a>
-  <ul class="right hide-on-med-and-down">
-        <li><a href="/minhasListas">Listas</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/cadastrar">Cadastrar</a></li>
-      </ul>
+      	<a href="/" class="brand-logo">Minha Lista</a>
+		<ul class="right hide-on-med-and-down">
+       		<li><a href="/minhasListas">Listas</a></li>
+		</ul>
     </div>
     <div class="nav-content">
       <a href="/cadastrar_lista" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
@@ -29,23 +27,28 @@
       </a>
     </div>
   </nav>
-<div class="container">
-	<h1 class="">Cadastro de lista</h1>
-</div>
-
-<form class="container" method="post">
-	<div class="row">
-		<div class="input-field col s4">
-			Nome: <input type="text" value="" name="nome" id="nome" placeholder="Nome da lista" required="required">
-		</div>
-		<div class="input-field col s4">
-			Data de fim: <input type="date" value="" name="dataFim" id="dataFim" required="required">
-		</div>
-		<div class="input-field col s4">
-			<button class="btn waves-effect waves-light" type="submit"> Criar<i class="material-icons right">send</i></button>
-		</div>
+<section style="min-height: 100vh;">
+	<div class="container" style="margin-top: 150px;">
+		<h1 class="">Cadastro de lista</h1>
 	</div>
-</form>
+	
+	<form class="container" method="post">
+		<div class="row">
+			<div class="input-field col s3">
+				Nome da festa: <input type="text" value="" name="nome" id="nome" placeholder="Nome da lista" required="required">
+			</div>
+			<div class="input-field col s4">
+				Nome do Anfitrião: <input type="text" value="" name="nomeAnfitriao" id="nomeAnfitriao" placeholder="Nome do Anfitrião" required="required">
+			</div>
+			<div class="input-field col s3">
+				Data de fim: <input type="date" value="" name="dataFim" id="dataFim" required="required">
+			</div>
+			<div class="input-field col s2">
+				<button class="btn waves-effect waves-light" type="submit"> Criar<i class="material-icons right">send</i></button>
+			</div>
+		</div>
+	</form>
+</section>
 
 <footer class="page-footer">
     <div class="footer-copyright">

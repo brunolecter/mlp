@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mlp.model.Item;
-import com.mlp.model.Lista;
 import com.mlp.repository.ItemRepository;
 import com.mlp.repository.ListaRepository;
 
@@ -35,14 +34,5 @@ public class ItemController {
 			return item;
 		}
 	}
-	
-	@RequestMapping(value="/cadastrar_item", method=RequestMethod.POST)
-	public String form(String codigoUnico, Item item) {
-		Lista lista = listarepository.findByCodigoUnico(codigoUnico);
-		item.setLista(lista);
-		itemrepository.save(item);
-		return "index";
-	}
-	
 	
 }

@@ -21,8 +21,6 @@
     <a href="/" class="brand-logo">Minha Lista</a>
    <ul class="right hide-on-med-and-down">
         <li><a href="/minhasListas">Listas</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/cadastrar_usuario">Cadastrar</a></li>
       </ul>
   </div>
   <div class="nav-content">
@@ -43,15 +41,14 @@
 <div th:each="lista: ${lista}">
 	<div class="container">
 		<div class="row">
-			
 			<div class="col s4">
-				<strong><h6>Nome: <span th:text="${lista.nome}"></span></h6></strong>
+				<strong><h6>Anfitrião: <span th:text="${lista.nomeAnfitriao}"></span></h6></strong>
+			</div>
+			<div class="col s4">
+				<strong><h6>Festa: <span th:text="${lista.nome}"></span></h6></strong>
 			</div>
 			<div class="col s4">
 				<strong><h6>Data limite: <span th:text="${lista.dataFim}"></span></h6></strong>
-			</div>
-			<div class="col s4">
-				<strong><h6>Codigo: <span th:text="${lista.codigoUnico}"></span></h6></strong>
 			</div>
 		</div>
 	</div>

@@ -21,8 +21,6 @@
     <a href="/" class="brand-logo">Minha Lista</a>
    <ul class="right hide-on-med-and-down">
         <li><a href="/minhasListas">Listas</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/cadastrar_usuario">Cadastrar</a></li>
       </ul>
   </div>
   <div class="nav-content">
@@ -39,6 +37,7 @@
 	    <tr>
 	    	<th>Código</th>
 	        <th>Nome</th>
+	        <th>Anfitrião</th>
 	        <th>Data Limite</th>
 	        <th>Excluir</th>
 	    </tr>
@@ -52,7 +51,7 @@
   					<span th:text="${objeto.nome}"></span>
    				</a>
 			</td>
-      	
+      		<td th:text="${objeto.nomeAnfitriao}"></td>
       		<td th:text="${objeto.dataFim}"></td>
       		
     		<td style="padding-left: 18px;">

@@ -15,13 +15,24 @@ public class Lista implements Serializable{
 	
 	private String nome;
 	private String dataFim;
+	private String nomeAnfitriao;
+
 	
+	public String getNomeAnfitriao() {
+		return nomeAnfitriao;
+	}
+
+	public void setNomeAnfitriao(String nomeAnfitriao) {
+		this.nomeAnfitriao = nomeAnfitriao;
+	}
+
 	@Id
 	public String codigoUnico;
 	
 	@OneToMany(mappedBy="lista", orphanRemoval=true, cascade=CascadeType.PERSIST)
 	private List<Item> itens;
 
+	
 	public Lista() {
 		this.codigoUnico = Utils.codigo();
 	}
