@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
     <!--Import Google Icon Font-->
@@ -11,7 +11,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     
-	<title>Cadsatrar Lista</title>
+	<title>Cadastrar Item</title>
 </head>
 <body>
 <nav class="nav-extended">
@@ -23,29 +23,28 @@
         <li><a href="/cadastrar">Cadastrar</a></li>
       </ul>
     </div>
-    <div class="nav-content">
-      <a href="/cadastrar_lista" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
-        <i class="material-icons">add</i>
-      </a>
-    </div>
   </nav>
-<div class="container">
-	<h1 class="">Cadastro de lista</h1>
-</div>
-
-<form class="container" method="post">
-	<div class="row">
-		<div class="input-field col s4">
-			Nome: <input type="text" value="" name="nome" id="nome" placeholder="Nome da lista" required="required">
-		</div>
-		<div class="input-field col s4">
-			Data de fim: <input type="date" value="" name="dataFim" id="dataFim" required="required">
-		</div>
-		<div class="input-field col s4">
-			<button class="btn waves-effect waves-light" type="submit"> Criar<i class="material-icons right">send</i></button>
-		</div>
+<section style="min-height: 100vh;">
+	<div class="container">
+		<h1>Cadastro de Item</h1>
 	</div>
-</form>
+	
+<div class="container">
+		<form method="post">
+			<div class="row">
+				<div class="col s4">
+					Nome do item: <input type="text" value="" name="nome"  placeholder="Nome do item"/>
+				</div>
+				<div class="col s4">
+					Local de compra: <input type="text" value="" name="localCompra"  placeholder="Local de compra"/>
+				</div>
+				<div class="col s4">
+					<button class="btn waves-effect waves-light" type="submit"> Adicionar<i class="material-icons right">add</i></button>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>
 
 <footer class="page-footer">
     <div class="footer-copyright">

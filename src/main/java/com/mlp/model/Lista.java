@@ -1,50 +1,58 @@
 package com.mlp.model;
 
 import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Lista implements Serializable{
 	
 	private static final long serialVersionUID=1L;
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long codigo;
-	
 	private String nome;
-	private String data_fim;
-	public String codigo_unico;
+	private String dataFim;
 	
+	@Id
+	public String codigoUnico;
 	
-	
-	public long getCodigo() {
-		return codigo;
+	@OneToMany(mappedBy="lista", orphanRemoval=true, cascade=CascadeType.PERSIST)
+	private List<Item> itens;
+
+	public Lista() {
+		this.codigoUnico = Utils.codigo();
 	}
-	public void setCodigo(long codigo) {
-		this.codigo = codigo;
+		
+	public Lista(String nome, String dataFim) {
+		super();
+		this.nome = nome;
+		this.dataFim = dataFim;
 	}
+	
+	public String getCodigoUnico() {
+		return codigoUnico;
+	}
+
+	public void setCodigoUnico(String codigoUnico) {
+		this.codigoUnico = codigoUnico;
+	}
+
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getData_fim() {
-		return data_fim;
+
+	public String getDataFim() {
+		return dataFim;
 	}
-	public void setData_fim(String data_fim) {
-		this.data_fim = data_fim;
+
+	public void setDataFim(String dataFim) {
+		this.dataFim = dataFim;
 	}
-	public String getCodigo_unico() {
-		return codigo_unico;
-	}
-	public void setCodigo_unico(String codigo_unico) {
-		this.codigo_unico = codigo_unico;
-	}
-	
-	
+
 }

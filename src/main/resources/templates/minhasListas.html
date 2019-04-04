@@ -37,15 +37,29 @@
 	<table class="container">
 	  <thead>
 	    <tr>
+	    	<th>Código</th>
 	        <th>Nome</th>
-	        <th>Local de compra</th>
+	        <th>Data Limite</th>
+	        <th>Excluir</th>
 	    </tr>
 	  </thead>
 	  
 	  <tbody>
 	    <tr th:each="objeto: ${listas}">
-	      <td th:text="${objeto.nome}"></td>
-	      <td th:text="${objeto.data_fim}"></td>
+      		<td th:text="${objeto.codigoUnico}"></td>
+   			<td>
+   				<a th:href="(${(#mvc.url('LC#detalhesLista').arg(0, objeto.codigoUnico)).build()})">
+  					<span th:text="${objeto.nome}"></span>
+   				</a>
+			</td>
+      	
+      		<td th:text="${objeto.dataFim}"></td>
+      		
+    		<td style="padding-left: 18px;">
+    			<a th:href="(${(#mvc.url('LC#deletarLista').arg(0, objeto.codigoUnico)).build()})">
+					<span><i class="material-icons">delete</i></span>
+				</a>
+			</td>
 	    </tr>
 	  </tbody>
 	

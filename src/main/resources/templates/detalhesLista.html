@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Minhas Listas</title>
+</head>
+<body>
+
+<nav class="nav-extended">
+  <div class="nav-wrapper container">
+    <a href="/" class="brand-logo">Minha Lista</a>
+   <ul class="right hide-on-med-and-down">
+        <li><a href="/minhasListas">Listas</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/cadastrar_usuario">Cadastrar</a></li>
+      </ul>
+  </div>
+  <div class="nav-content">
+    <a href="/cadastrar_lista" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+      <i class="material-icons">add</i>
+    </a>
+  </div>
+</nav>
+
+<section style="min-height: 100vh;">
+<div class="container" style="margin-top:50px;">
+	<div class="row">
+		<h5>
+			Informações da festa
+		</h5>
+	</div>
+</div>
+<div th:each="lista: ${lista}">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col s4">
+				<strong><h6>Nome: <span th:text="${lista.nome}"></span></h6></strong>
+			</div>
+			<div class="col s4">
+				<strong><h6>Data limite: <span th:text="${lista.dataFim}"></span></h6></strong>
+			</div>
+			<div class="col s4">
+				<strong><h6>Codigo: <span th:text="${lista.codigoUnico}"></span></h6></strong>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container" style="margin-top:50px;">
+	<div class="row">
+		<h5>
+			Adicionar Item
+		</h5>
+	</div>
+	<div>
+		<form method="post">
+			<div class="row">
+				<div class="input-field col s4">
+					Nome: <input type="text" value="" name="nome" placeholder="Nome do item" required="required">
+				</div>
+				<div class="input-field col s5">
+					Local de compra: <input type="text" value="" name="localCompra" placeholder="Local de compra" required="required">
+				</div>
+				<div class="input-field col s3">
+					<button class="btn waves-effect waves-light" type="submit"> Adicionar<i class="material-icons right">add</i></button>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+</div>
+<div class="container">
+	<h5>
+		Todos os itens
+	</h5>
+</div>
+<div class="row" style="margin-top: 25px;">
+	<div class="container">
+		<table>
+			<thead>
+		    	<tr>
+		    		<th>Item</th>
+		        	<th>Local de Compra</th>
+		        	<th>Excluir</th>
+		    	</tr>
+		  	</thead>
+	  
+		  	<tbody>
+			    <tr th:each="item : ${itens}">
+		      		<td><span th:text="${item.nome}"></span></td>
+		   			<td>
+						<span th:text="${item.localCompra}"></span>
+					</td>
+					<td>
+						<a th:href="(${(#mvc.url('LC#deletarItem').arg(0, item.id)).build()})">
+							<span><i class="material-icons">delete</i></span>
+						</a>
+					</td>
+			    </tr>
+		  	</tbody>
+	
+		</table>
+	</div>
+</div>
+	
+            
+</section>
+
+<footer class="page-footer">
+    <div class="footer-copyright">
+    	<div class="container" style="text-align:center;">
+	    	© 2019 Copyright Text
+    	</div>
+  	</div>
+</footer>
+
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>
