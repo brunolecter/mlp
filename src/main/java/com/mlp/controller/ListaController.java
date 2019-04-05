@@ -32,6 +32,7 @@ public class ListaController {
 		return "redirect:/minhasListas";
 	}
 	
+	
 	@Controller
 	public class MinhasListas {
 		@RequestMapping("/minhasListas")
