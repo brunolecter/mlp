@@ -15,21 +15,25 @@ import com.mlp.repository.ListaRepository;
 @Controller
 public class ListaController {
 	
+	//Injeção de dependência
 	@Autowired
 	public ListaRepository listarepository;
-	
+
+	//Injeção de dependência
 	@Autowired
 	public ItemRepository itemrepository;
 	
+	//Mapeamento da URL para cadastramento da Lista, quando o método é GET, ele busca por uma lista
 	@RequestMapping(value="/cadastrar_lista", method=RequestMethod.GET)
 	public String form() {
 		return "cadastrar_lista";
 	}
 	
+	//Mapeamento da URL para cadastramento da Lista, quando o método é POST, ele salva uma lista
 	@RequestMapping(value="/cadastrar_lista", method=RequestMethod.POST)
 	public String form(Lista lista) {
 		listarepository.save(lista);
-		return "redirect:/minhasListas";
+		return "redirect:/minhasListas/";
 	}
 	
 	

@@ -13,6 +13,7 @@ import com.mlp.repository.ListaRepository;
 @Controller
 public class IndexController {
 	
+	//Injeção de dependência
 	@Autowired
 	public ListaRepository listarepository;
 	

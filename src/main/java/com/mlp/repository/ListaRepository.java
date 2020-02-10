@@ -1,9 +1,9 @@
 package com.mlp.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.mlp.model.Lista;
 
-public interface ListaRepository extends CrudRepository<Lista, String>{
+public interface ListaRepository extends JpaRepository<Lista, String>{
 	Lista findByCodigoUnico(String codigoUnico);
 }

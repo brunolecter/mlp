@@ -12,10 +12,8 @@ public class Item {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	
-	private String nome;
-	private String localCompra;
-	private Boolean selecionado;
+	public String nome;
+	public String localCompra;
 	
 	@ManyToOne
 	private Lista lista;
@@ -44,11 +42,5 @@ public class Item {
 	}
 	public void setLocalCompra(String localCompra) {
 		this.localCompra = localCompra;
-	}
-	public Boolean getSelecionado() {
-		return selecionado;
-	}
-	public void setSelecionado(Boolean selecionado) {
-		this.selecionado = selecionado;
 	}
 }

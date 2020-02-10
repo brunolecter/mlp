@@ -13,9 +13,9 @@ public class Lista implements Serializable{
 	
 	private static final long serialVersionUID=1L;
 	
-	private String nome;
-	private String dataFim;
-	private String nomeAnfitriao;
+	public String nome;
+	public String dataFim;
+	public String nomeAnfitriao;
 
 	
 	public String getNomeAnfitriao() {
@@ -29,7 +29,7 @@ public class Lista implements Serializable{
 	@Id
 	public String codigoUnico;
 	
-	@OneToMany(mappedBy="lista", orphanRemoval=true, cascade=CascadeType.PERSIST)
+	@OneToMany(mappedBy="lista", orphanRemoval=true, cascade=CascadeType.ALL)
 	private List<Item> itens;
 
 	
